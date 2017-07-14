@@ -2,6 +2,9 @@ FROM centos:7
 
 MAINTAINER Justin Fear <justin.m.fear@gmail.com>
 
+ENV LANG "en_US.utf8"
+ENV LC_ALL "en_US.utf8"
+
 RUN yum update -y
 RUN yum install -y wget git bzip2
 
