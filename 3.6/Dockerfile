@@ -16,7 +16,9 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
 
 ENV PATH /opt/conda/bin:$PATH
 
-RUN conda install python=3.6
+RUN conda install -y python=3.6 && \
+    conda clean --all -y
+
 RUN conda config --add channels conda-forge && \
     conda config --add channels defaults && \
     conda config --add channels bioconda && \
