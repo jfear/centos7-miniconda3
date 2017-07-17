@@ -5,8 +5,8 @@ MAINTAINER Justin Fear <justin.m.fear@gmail.com>
 ENV LANG "en_US.utf8"
 ENV LC_ALL "en_US.utf8"
 
-RUN yum update -y
-RUN yum install -y wget git bzip2
+RUN yum install -y wget git bzip2 && \
+    yum -y clean all
 
 RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     wget --quiet https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
